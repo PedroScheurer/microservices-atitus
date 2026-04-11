@@ -1,0 +1,3 @@
+greeting-service:
+  greeting: Bonjour
+  default-name: Le Monde
