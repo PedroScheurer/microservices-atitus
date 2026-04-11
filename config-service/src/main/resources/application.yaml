@@ -1,12 +1,22 @@
+server:
+  port: 8888
+
 spring:
   application:
     name: config-service
-  profiles:
-    active: native
+  #profiles:
+    #active: native
+  #cloud:
+    #config:
+      #server:
+        #native:
+          #search-locations: classpath:/configs/{application}
+
   cloud:
     config:
       server:
-        native:
-          search-locations: classpath:/configs/{application}
-server:
-  port: 8888
+        git:
+          uri: https://github.com/PedroScheurer/microservices-atitus.git
+          default-label: main
+          search-paths: configs/{application}
+          username: PedroScheurer
