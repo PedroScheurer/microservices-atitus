@@ -4,19 +4,14 @@ server:
 spring:
   application:
     name: config-service
-  #profiles:
-    #active: native
-  #cloud:
-    #config:
-      #server:
-        #native:
-          #search-locations: classpath:/configs/{application}
-
+  profiles:
+    active: default
   cloud:
     config:
       server:
         git:
           uri: https://github.com/PedroScheurer/microservices-atitus.git
-          default-label: main
-          search-paths: configs/{application}
-          username: PedroScheurer
+          search-paths: configs
+          clone-on-start: true
+        native:
+          search-locations: classpath:/configs/{application}
