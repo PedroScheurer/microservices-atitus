@@ -11,7 +11,8 @@ spring:
       server:
         git:
           uri: https://github.com/PedroScheurer/microservices-atitus.git
-          search-paths: configs
+          search-paths: configs/{application}
           clone-on-start: true
-        native:
-          search-locations: classpath:/configs/{application}
+          force-pull: true
+        #native:
+        #  search-locations: classpath:/configs/{application}
