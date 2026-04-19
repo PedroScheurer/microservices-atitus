@@ -1,3 +1,11 @@
+server:
+  port: 8081
 spring:
   application:
     name: currency-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/db_currency
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+  flyway:
+    locations: classpath:db_migration
